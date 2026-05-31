@@ -35,3 +35,21 @@ export const getAllUsers = async () => {
     throw error;
   }
 };
+
+export const updateUser = async (userId, data) => {
+  try {
+    const response = await api.put(`/auth/users/${userId}`, data);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const deleteUser = async (userId) => {
+  try {
+    const response = await api.delete(`/auth/users/${userId}`);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
